@@ -5,12 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.7.6'
+
+gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
+
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
-gem 'rails', '~> 5.1.5'
+gem 'responders', '~> 3.0'
 
 # Auth
-gem 'device_token_auth', '-> 1.1.4'
+gem 'devise_token_auth', '~> 1.2.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
